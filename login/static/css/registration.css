@@ -1,0 +1,22 @@
+body{
+    background-color: #7fcdcd;
+    color: white;
+}
+.registration-form{
+    margin-top: 60px;
+    margin-left: 840px;
+    margin-right: 840px;
+    position: fixed;
+    font-size: 19px;
+}
+h1{
+    margin-top: 20px;
+    margin-left: 810px;
+    margin-right: 800px;
+    position: fixed;
+    color: black;
+}
+
+input{
+    color: black;
+}

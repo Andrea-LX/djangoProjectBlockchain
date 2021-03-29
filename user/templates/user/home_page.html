@@ -1,0 +1,52 @@
+{% load static %}
+<html>
+<head>
+
+    <title>Django site</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+
+</head>
+<body>
+
+    <div class='box-post'>
+    <h1>Publish a post</h1>
+    <form method="POST" class='post-form'>
+    {% csrf_token %}
+    <label for="Message">Post this message:</label><br>
+    <input type="text" id="msg" name="msg"><br>
+    <br>
+    <input type="submit" value="Publish!" />
+    </form>
+
+
+    <h1>Search for a word</h1>
+    <form action="/home/searchWord/" method="get">
+    {% csrf_token %}
+    <label for="Search">Search this word:</label><br>
+    <input type="text" name="q"><br>
+    <br>
+    <input type="submit" value="Search">
+    </form>
+    </div>
+
+    <h2><a href="{% url 'last_h_Posts' %}">Post of the last hour</a></h2>
+
+
+    <div class='post-list'>
+    {% for pos in post %}
+    <table>
+        <tr>
+            <th>{{ pos.author }}</th>
+            <th>{{ pos.published_date }}</th>
+        </tr>
+        <tr>
+            <td>{{ pos.content }}</td>
+        </tr>
+        </table>
+    {% endfor %}
+    </div>
+
+</body>
+</html>

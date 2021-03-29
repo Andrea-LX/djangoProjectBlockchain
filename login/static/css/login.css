@@ -1,0 +1,22 @@
+body{
+    background-color: #7fcdcd;
+    color: white;
+}
+.login-form{
+    margin-top: 60px;
+    margin-left: 840px;
+    margin-right: 840px;
+    position: fixed;
+    font-size: 19px;
+}
+h1{
+    margin-top: 20px;
+    margin-left: 870px;
+    margin-right: 840px;
+    position: fixed;
+    color: black;
+}
+
+input{
+    color: black;
+}

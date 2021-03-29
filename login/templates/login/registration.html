@@ -1,0 +1,26 @@
+{% load static %}
+<html>
+<head>
+
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <br>
+    <div class='registration-form'>
+    {% block content %}
+    <form method='post'>
+    {% csrf_token %}
+    {{form}}
+    <br><br>
+    <input type="submit" id='registration' value="Registration">
+    {% endblock %}
+    </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/governance.css' %}">
+</head>
+<body>
+
+<h1>Number of User posts</h1>
+    <div>
+        {% for name, num in numPost.items %}
+        <table class='num-post'>
+        <tr>
+            <td>{{ name }}: </td>
+            <td>{{ num }}</td><br>
+        </tr>
+        </table>
+        {% endfor %}
+    </div>
+<h2><a href='/home'><br> Go to Homepage</a></h2>
+
+</body>
+</html>

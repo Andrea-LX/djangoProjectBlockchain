@@ -1,0 +1,28 @@
+body{
+    background-color: #7fcdcd;
+    color: white;
+}
+
+h1{
+    text-align: center;
+    color: black;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.num-post{
+    margin: 0 auto;
+    font-family: monospace;
+    font-size: 30px;
+}
+
+td{
+    padding: 5px;
+}
+
+h2{
+    text-align: center;
+    color: black;
+    margin-bottom: 50px;
+    margin-top: 200px;
+}

@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+<head>
+    <title>Login page</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+
+    <h1>Login Form</h1>
+    <br>
+    <div class='login-form'>
+    <form method='post'>
+    {% csrf_token %}
+    {{form}}
+    <br><br>
+    <input type="submit" id='login' value="Login">
+    </form>
+    <br>
+    <h4>You are a new user?<a href='/registration'><br> Click here.</a></h4>
+    </div>
+
+</body>
+</html>

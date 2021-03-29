@@ -1,0 +1,61 @@
+body {
+    background-color: #7fcdcd;
+}
+
+.post-form{
+    color: light blue;
+    width: 200px;
+    height: 200px;
+}
+
+.box-post{
+    width: 400px;
+    height: 400px;
+    text-align: left;
+    margin-left: 200px;
+    position: fixed;
+}
+
+h2{
+    color: white;
+    text-align: left;
+    margin-left: 200px;
+    margin-top: 550px;
+    position: fixed;
+}
+
+h1{
+    color: white;
+}
+
+p{
+    color: white;
+}
+
+table {
+    border: 2px solid white;
+    border-collapse: collapse;
+    margin-right: 200px;
+    color: green;
+  }
+
+th, td{
+    padding: 5px;
+}
+
+th{
+    color: white;
+}
+
+td{
+    color: black;
+}
+
+table{
+    margin-bottom: 40px;
+}
+
+.post-list{
+    margin-top: 150px;
+    margin-left: 800px;
+}

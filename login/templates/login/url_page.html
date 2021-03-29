@@ -1,0 +1,17 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    {% block content %}
+    <div class='block'>
+        {% for child in user %}
+        <h1>ID: {{child.id}}</h1><br><br>
+        <h1>User: {{ child.username}}</h1>
+        {% endfor %}
+    </div>
+    {% endblock %}
+</body>
+</html>
