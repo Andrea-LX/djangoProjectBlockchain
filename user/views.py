@@ -6,6 +6,17 @@ from django.utils import timezone
 from django.urls import reverse
 import math
 from .models import Post
+from django.conf import settings
+import re
+from django.core.cache.backends.base import DEFAULT_TIMEOUT
+from django.views.decorators.cache import cache_page
+from django.core.cache import cache
+from django.views.decorators.csrf import csrf_exempt
+
+
+CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
+@csrf_exempt
+@cache_page(CACHE_TTL)
 
 
 def homePage(request):
@@ -16,7 +27,9 @@ def homePage(request):
         else:
             new_post = Post(user=request.user, content=message['msg'])
             new_post.setDate()
+            new_post.writeOnChain()  #validate on blockchain
             new_post.save()
+            cache.clear()
             response = []
             posts = Post.objects.filter().order_by('-published_date')
             for post in posts:
@@ -36,6 +49,7 @@ def homePage(request):
                 'author': f"{post.user}",
                 'published_date': post.published_date
             })
+
         return render(request, 'user/home_page.html', {'post': response})
 
 
@@ -51,7 +65,9 @@ def last_h_Posts(request):
                 'author': f"{post.user}",
                 'content': post.content,
                 'published_date': post.published_date,
-                'minutesAgo': minutes
+                'minutesAgo': minutes,
+                'hash': post.hash,
+                'txId': post.txId
             })
         else:
             continue
